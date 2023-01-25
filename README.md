@@ -15,6 +15,8 @@ Open the serial monitor at 115200 baud to see the output
 
 ## Instructions
 
+1. The SPARTN data sent by the NEO-D9S correction receiver (via a UBX RXM-PMP message) is encrypted. You'll need to subscribe to a service which provides the necessary decryption key(s) e.g. u-blox's [PointPerfect](https://www.u-blox.com/en/product/pointperfect), provided by Thingstream. **NB:** Make sure you meet their Terms and Conditions before parting with money.
+1. Once you have the necessary `L-Band or L-Band + IP DYNAMIC KEY` key(s) - normally two, the current one and the next one - you'll need to update the `\src\secrets.h` file with the details. For GPS Week Number (`wno`) and Time of Week (`tow`), refer to [GPS calendar](https://navigationservices.agi.com/GNSSWeb/) (wno = "Full GPS week since 1st epoch"; tow = "seconds of week at midnight for that day").
 1. Install the [PlatformIO extension](https://docs.platformio.org/en/latest/integration/ide/vscode.html) for VSCode if you haven't already.
 1. Download and unzip this repo, or clone it:
 
